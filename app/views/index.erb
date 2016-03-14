@@ -1,0 +1,32 @@
+<div class="container">
+<nav></nav>
+  <header><h1>A lightweight bitly clone</h1></header>
+
+  <div class="form">
+  <form action="/urls" method="post" id="shortener-form">
+    <input type="text" placeholder="Paste in the link you want shortened" name="long" class="form-input">
+    <input type="submit" value="Shorten" class="button white">
+  </form>
+  <p class="error"><%= flash[:error] %> </p>
+</div>
+<section>
+
+
+
+    <div id ="links">
+      <h2 class="your-shortened-links">Your Shortened Link</h2>
+    </div>
+
+    <hr>
+  <h2>Recent links</h2>
+  <% @urls.each do |link| %>
+    <div class="links">
+      <p>Shares: <%= link.share_count %></p>
+      <p><a class="long" href="<%= link.long %>" target="_blank"><%= link.long %></a></p>
+      <p><a class="shortened" href="<%= link.shortened %>" target="_blank">shortened.com/<%= link.shortened %></a></p>
+    </div>
+
+  <% end %>
+
+</section>
+</div>
