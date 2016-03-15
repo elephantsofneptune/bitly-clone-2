@@ -7,14 +7,16 @@
     <input type="text" placeholder="Paste in the link you want shortened" name="long" class="form-input">
     <input type="submit" value="Shorten" class="button white">
   </form>
-  <p class="error"><%= flash[:error] %> </p>
+  <% if @error %>
+  <p class="error"><%= @error %></p>
+  <% end %>
 </div>
 <section>
 
 
 
     <div id ="links">
-      <h2 class="your-shortened-links">Your Shortened Link</h2>
+
     </div>
 
     <hr>
@@ -23,10 +25,11 @@
     <div class="links">
       <p>Shares: <%= link.share_count %></p>
       <p><a class="long" href="<%= link.long %>" target="_blank"><%= link.long %></a></p>
-      <p><a class="shortened" href="<%= link.shortened %>" target="_blank">shortened.com/<%= link.shortened %></a></p>
+      <p><a class="shortened" href="<%= link.shortened %>" target="_blank">dil.pub/<%= link.shortened %></a></p>
     </div>
 
   <% end %>
 
 </section>
+<footer><p><a href="http://ryanfsalerno.com" target="_blank">&copy; Ryan F. Salerno</a></p></footer>
 </div>

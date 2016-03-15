@@ -10,8 +10,15 @@ class Url < ActiveRecord::Base
   end
 
   def validate_url
-   unless long =~ /\A#{URI::regexp(['http', 'https'])}\z/
-      errors.add(:long, 'Needs to be a valid URL!')
+    prefix = 'http://'
+    secure_prefix = 'https://'
+
+    unless self.long[0...7].downcase == prefix || self.long[0...8].downcase == secure_prefix
+      self.long = prefix + self.long
+    end
+
+    unless self.long =~ /^[a-zA-Z]+:\/\//
+      errors.add(:long, "Please enter a valid URL beginning with 'http://' or 'https://'")
     end
   end
 

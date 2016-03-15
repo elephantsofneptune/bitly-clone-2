@@ -3,7 +3,7 @@ a {
   text-decoration: none;
 }
 
-.error {
+p.error {
   color: red;
 }
 
@@ -61,16 +61,16 @@ header {
 }
 
 
-    body {
-      background-color: #f9f9f9;
-      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      -webkit-tap-highlight-color: rgba(0,0,0,0);
-      -webkit-touch-callout: none;
-    }
+body {
+  background-color: #f9f9f9;
+  font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+}
 
     section {
       padding: 30px 25px;
@@ -285,6 +285,15 @@ header {
       color: #d23f31;
     }
 
+footer p a {
+  font-size: .8rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+
+footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
 
 
 

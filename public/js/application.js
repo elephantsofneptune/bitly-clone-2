@@ -8,7 +8,6 @@ $(document).ready(function() {
       data: $(this).serialize(),
       dataType: 'html'
     }).done( function(response) {
-      $('.your-shortened-links').show();
       $('#links').show();
       $('#links').append(response);
     })
